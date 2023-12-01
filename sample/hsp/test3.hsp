@@ -18,6 +18,10 @@
 	chdir "../../png"
 
 	chr=1			; キャラID
+	chk_dir=1		; 方向フラグ
+	chk_santa=0		; サンタフラグ
+	chk_icon=0		; アイコン付加フラグ
+	sdchr_loadicon		; アイコン(漫符)の読み込み
 
 *start
 	;	SDキャラの準備
@@ -28,9 +32,13 @@
 	;	p3(0) : サイズ%(0=100%)
 	;
 	cls
-	sdchr_load chr,1,0	; 素材の指定
+	sdchr_load chr,chk_dir,0	; 素材の指定
+	prev_dir=chk_dir
 
 	button "キャラ変更",*chrchange
+	chkbox 	"向き",chk_dir
+	chkbox 	"サンタ",chk_santa
+	chkbox 	"アイコン",chk_icon
 
 	mepati=0		; 目のアニメーション
 
@@ -42,9 +50,16 @@
 	mepati++:i=mepati\30
 	if i>2 : i=0
 	sdchr_put chr,0,i,0		; 素材の表示
+	if chk_santa {
+		sdchr_putsanta		; サンタ帽を表示
+	}
+	if chk_icon {
+		sdchr_puticon 1		; アイコン表示
+	}
 
 	redraw 1
 	await 1000/12
+	if prev_dir!=chk_dir : goto *start
 	goto *main
 
 *chrchange
@@ -52,5 +67,6 @@
 	chr++
 	if chr>3 : chr=0
 	goto *start
+*bousi
 
 
