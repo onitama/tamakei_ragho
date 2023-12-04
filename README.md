@@ -27,6 +27,10 @@ HSP3オフィシャルキャラクター"珠音（たまね）ちゃん"、プ�
 
 さらに豊かな表現を行うためのアイコン(漫符)がオマケとして用意されています。
 
+![サンタ帽](images/up_santa.png "up_santa.png")
+
+サンタ帽もオマケとして用意されています。
+
 
 # フォルダ詳細
 
@@ -80,6 +84,6 @@ https://kei.pronama.jp/guideline/
 
 -------------------------------------------------------------------------------
 Hot Soup Processor (HSP)
-Copyright (C) 1997-2023, Onion Software/onitama, xMade with base technology of OpenHSP.
+Copyright (C) 1997-, Onion Software/onitama, xMade with base technology of OpenHSP.
 https://github.com/onitama/OpenHSP
 
